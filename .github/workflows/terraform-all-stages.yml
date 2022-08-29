@@ -36,4 +36,3 @@ jobs:
      
 #     - name: Terraform destroy
 #        run: terraform destroy
-# just for testing 
