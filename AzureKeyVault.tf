@@ -1,9 +1,9 @@
 
 # RG creation 
-#resource "azurerm_resource_group" "RG-githubaction-azure" {
-#  name     = "rg-githubaction-cloudquickpocs"
-#  location = "northeurope"
-#}
+resource "azurerm_resource_group" "RG-githubaction-azure" {
+  name     = "rg-githubaction-cloudquickpocs"
+  location = "northeurope"
+}
 
 # Retrieve data
 data "azurerm_client_config" "current" {}
@@ -11,10 +11,8 @@ data "azurerm_client_config" "current" {}
 # Create Keyvautlt
 resource "azurerm_key_vault" "quickpocskeyvault" {
   name                       = "quickpocskeyvault001"
-  location                   = EastUS2
-  resource_group_name        = terraform-rg
-  #location                   = azurerm_resource_group.RG-githubaction-azure.location
-  #resource_group_name        = azurerm_resource_group.RG-githubaction-azure.name
+  location                   = azurerm_resource_group.RG-githubaction-azure.location
+  resource_group_name        = azurerm_resource_group.RG-githubaction-azure.name
   tenant_id                  = data.azurerm_client_config.current.tenant_id
   sku_name                   = "premium"
   soft_delete_enabled        = true
