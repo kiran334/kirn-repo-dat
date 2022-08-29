@@ -1,8 +1,8 @@
 # ARM provider block -main
-#provider "azurerm" {
-#  version = "~>2.0"
-#  features {}
-#}
+provider "azurerm" {
+  version = "~>2.0"
+  features {}
+}
 # Terraform backend configuration block -precreated
 terraform {
   backend "azurerm" {
