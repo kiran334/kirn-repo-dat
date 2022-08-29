@@ -25,7 +25,7 @@ data "azurerm_client_config" "current" {}
 # Create Keyvautlt
 resource "azurerm_key_vault" "quickpocskeyvault" {
   name                       = "quickpocskeyvault001"
-  location                   = East US
+  location                   = EastUS2
   resource_group_name        = terraform-rg
   #location                   = azurerm_resource_group.RG-githubaction-azure.location
   #resource_group_name        = azurerm_resource_group.RG-githubaction-azure.name
