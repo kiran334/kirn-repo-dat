@@ -22,8 +22,10 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
+        working-directory: vm_linux_azure
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
         run: terraform plan -no-color
+        working-directory: vm_linux_azure
