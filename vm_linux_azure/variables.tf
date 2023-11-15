@@ -37,3 +37,9 @@ variable "linux_virtual_machine_name" {
   type        = string
   description = "Linux VM name in Azure"
 }
+variable "ARM_SUBSCRIPTION_ID" {
+  description = "Azure Subscription ID"
+}
+variable "ARM_CLIENT_SECRET" {
+  description = "Azure CLient Secret"
+}
