@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout
+      - name: Checkout_repo_into_GH_RUnner
         uses: actions/checkout@v2
-
+            
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
@@ -26,4 +26,4 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
-        run: terraform plan -no-color
+        run: terraform plan -out=tfplan -no-color 
