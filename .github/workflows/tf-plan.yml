@@ -13,17 +13,7 @@ jobs:
     steps:
       - name: Checkout_repo_into_GH_RUnner
         uses: actions/checkout@v2
-      
-      # Before
-      - name: Set Output
-        id: step1
-        run: echo "::set-output name=my_output::some_value"
-
-      # After
-      - name: Set Output
-        id: step1
-        run: echo "my_output=some_value" >> $GITHUB_ENV
-
+            
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
