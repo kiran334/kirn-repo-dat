@@ -1,13 +1,13 @@
-resource "azurerm_resource_group" "demo" {
-  name     = "example-resources"
+resource "azurerm_resource_group" "demo1" {
+  name     = "dev-rg1119"
   location = "East US2"
 }
 
 ##  Demo now
 resource "azurerm_storage_account" "StorageAccountDemo" {
-  name                     = "satestant000012"
-  resource_group_name      = azurerm_resource_group.demo.name
-  location                 = azurerm_resource_group.demo.location
+  name                     = "kirantestsa"
+  resource_group_name      = azurerm_resource_group.demo1.name
+  location                 = azurerm_resource_group.demo1.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
 
