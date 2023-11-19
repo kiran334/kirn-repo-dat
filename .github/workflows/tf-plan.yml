@@ -13,6 +13,14 @@ jobs:
     steps:
       - name: Checkout_repo_into_GH_RUnner
         uses: actions/checkout@v2
+      
+      - name: Set environment variables
+        run: |
+          echo "MY_VAR=Hello" >> $GITHUB_ENVIRONMENT_FILE
+      
+      - name: Use environment variables
+        run: |
+          echo "MY_VAR=${{ env.MY_VAR }}"
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
