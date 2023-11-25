@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "demo1" {
-  name     = "dev-rg1119"
+  name     = "dev-rg"
   location = "East US2"
 }
 
