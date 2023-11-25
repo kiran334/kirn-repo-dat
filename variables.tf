@@ -22,3 +22,8 @@ variable "resource_group_name" {
   description = "resource_group_name"
   type        = string
 }
+variable "yoursecretpassword" {
+  description = "yoursecretpassword"
+  type        = string
+}
+
