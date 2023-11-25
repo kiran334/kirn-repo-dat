@@ -26,4 +26,7 @@ variable "yoursecretpassword" {
   description = "yoursecretpassword"
   type        = string
 }
-
+variable "pub_key" {
+  description = "public_key"
+  type        = string
+}
