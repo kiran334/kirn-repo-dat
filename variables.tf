@@ -14,3 +14,16 @@ variable "ARM_TENANT_ID" {
   description = "ARM_TENANT_ID"
   type        = string
 }
+variable "location" {
+  description = "location"
+  type        = string
+}
+variable "resource_group_name" {
+  description = "resource_group_name"
+  type        = string
+}
+variable "yoursecretpassword" {
+  description = "yoursecretpassword"
+  type        = string
+}
+
