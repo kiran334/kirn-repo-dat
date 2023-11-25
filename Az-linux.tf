@@ -14,7 +14,7 @@ resource "azurerm_subnet" "example" {
 
 resource "azurerm_network_interface" "example" {
   name                = "example-nic"
-  location            = azurerm_resource_group.example.location
+  location            = var.location
   resource_group_name = var.resource_group_name
 
   ip_configuration {
