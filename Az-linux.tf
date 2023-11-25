@@ -26,10 +26,10 @@ resource "azurerm_network_interface" "example" {
 
 resource "azurerm_linux_virtual_machine" "example" {
   count               =     1
-  name                = "kiranlinuxnew1125"
+  name                = "kiranlinuxnew11251"
   resource_group_name = var.resource_group_name
   location            = var.location
-  size                = "Standard_F2"
+  size                = "Standard_D2s_v3"
   admin_username      = "adminuser"
   admin_password      = var.yoursecretpassword
   network_interface_ids = [
