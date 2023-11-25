@@ -25,7 +25,7 @@ resource "azurerm_network_interface" "example" {
 }
 
 resource "azurerm_linux_virtual_machine" "example" {
-  name                = "example-machine"
+  name                = "testlinuxvm1125"
   resource_group_name = var.resource_group_name
   location            = var.location
   size                = "Standard_F2"
