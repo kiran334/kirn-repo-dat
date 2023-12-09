@@ -16,6 +16,14 @@ terraform {
     }
   }
 }
+# terraform {
+#   backend "remote" {
+#     organization = "spk545"
+#     workspaces {
+#       name = "kiran-repo-dat-workspace"
+#     }
+#   }
+# }
 
 # terraform {
 #   backend "azurerm" {
