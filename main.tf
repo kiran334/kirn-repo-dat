@@ -15,7 +15,7 @@ terraform {
 #       name = "Kiran_WS_API_type"
 #     }
 #   }
-# }
+}
 
 # terraform {
 #   backend "azurerm" {
