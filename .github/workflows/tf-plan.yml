@@ -58,10 +58,10 @@ jobs:
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-      # - name: Deploy Linux VM
-      #   run: |
-      #     cd terraform/Linux
-      #     terraform init
-      #     terraform plan -out=tfplan -no-color
-      #     # Add terraform apply or other necessary commands based on your workflow
+      - name: Plan Linux VM
+        run: |
+          cd terraform/Linux
+          terraform init
+          terraform plan -out=tfplan -no-color
+          # Add terraform apply or other necessary commands based on your workflow
 
