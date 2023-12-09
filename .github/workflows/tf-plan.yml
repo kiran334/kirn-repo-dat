@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout_repo_into_GH_RUnner
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Setup Terraform
@@ -60,4 +60,6 @@ jobs:
         run: |
           cd terraform/linux-vm
           terraform init
-          terraform apply -auto-approve
+          terraform plan -out=tfplan -no-color
+          # Add terraform apply or other necessary commands based on your workflow
+
