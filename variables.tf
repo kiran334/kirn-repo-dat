@@ -30,3 +30,12 @@ variable "pub_key" {
   description = "public_key"
   type        = string
 }
+variable "administrator_login" {
+  description = "administrator_login"
+  type        = string
+}
+variable "administrator_login_password" {
+  description = "administrator_login_password"
+  type        = string
+}
+
