@@ -1,4 +1,4 @@
-name: "Terraform-Plan-Infra-Plan"
+name: "Terraform-Plan-Infra-Release"
 
 on:
   push:
@@ -9,24 +9,11 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
-    
-    steps:
-      # - name: Log in with Azure
-        # uses: azure/login@v1
-        # with:
-        #   client-id: ${{ secrets.ARM_CLIENT_ID }}
-        #   tenant-id: ${{ secrets.ARM_TENANT_ID }}
-        #   subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        #   client-secret: ${{ secrets.ARM_CLIENT_SECRET }}
 
-      - name: Setup Azure CLI 
-         uses: azure/login@v1
-         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-      
+    steps:
       - name: Checkout_repo_into_GH_RUnner
         uses: actions/checkout@v2
-      
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
@@ -40,3 +27,8 @@ jobs:
         id: plan
         if: github.event_name == 'push'
         run: terraform plan -out=tfplan -no-color 
+        continue-on-error: true
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
