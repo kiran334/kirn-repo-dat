@@ -17,14 +17,14 @@ terraform {
 #   }
 }
 
-# terraform {
-#   backend "azurerm" {
-#     resource_group_name   = "dev-rg"
-#     storage_account_name   = "sadevaccttest"
-#     container_name         = "tffiles"
-#     key                    = "terraform_sql.tfstate"
-#   }
-# }
+terraform {
+  backend "azurerm" {
+    resource_group_name   = "dev-rg"
+    storage_account_name   = "sadevaccttest"
+    container_name         = "tffiles"
+    key                    = "terraform_sql.tfstate"
+  }
+}
 provider "azurerm" {
   features {}
   
