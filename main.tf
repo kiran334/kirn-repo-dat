@@ -9,10 +9,21 @@ terraform {
       version = "~>3.0.0"
     }
   }
-  cloud {
+
+
+#   cloud {
+#     organization = "spk545"
+#     workspaces {
+#       name = "Kiran_WS_API_type"
+#     }
+#   }
+}
+
+terraform {
+  backend "remote" {
     organization = "spk545"
     workspaces {
-      name = "Kiran_WS_API_type"
+      name = "kiran-repo-dat-workspace"
     }
   }
 }
