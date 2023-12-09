@@ -62,6 +62,6 @@ jobs:
         run: |
           cd ./Linux
           terraform init
-          terraform plan  -no-color
+          terraform plan -out=tfplan -no-color
           # Add terraform apply or other necessary commands based on your workflow
 
