@@ -11,13 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+
+      # - name: Setup Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
       - name: Checkout_repo_into_GH_RUnner
         uses: actions/checkout@v2
 
-      # - name: Setup Azure CLI
-      #   uses: azure/login@v1
-      #   with:
-      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
             
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1

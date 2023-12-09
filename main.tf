@@ -9,13 +9,13 @@ terraform {
       version = "=3.0.0"
     }
   }
-  cloud {
-    organization = "spk545"
-    workspaces {
-      name = "Kiran_WS_API_type"
-    }
-  }
-}
+#   cloud {
+#     organization = "spk545"
+#     workspaces {
+#       name = "Kiran_WS_API_type"
+#     }
+#   }
+# }
 
 # terraform {
 #   backend "azurerm" {
