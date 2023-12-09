@@ -60,7 +60,7 @@ jobs:
 
       - name: Plan Linux VM
         run: |
-          cd terraform/Linux
+          cd ./Linux
           terraform init
           terraform plan -out=tfplan -no-color
           # Add terraform apply or other necessary commands based on your workflow
