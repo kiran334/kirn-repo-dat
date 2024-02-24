@@ -9,8 +9,6 @@ terraform {
       version = "~>3.0.0"
     }
   }
-
-
   cloud {
     organization = "spk545"
     workspaces {
@@ -18,7 +16,6 @@ terraform {
     }
   }
 }
-
 # terraform {
 #   backend "remote" {
 #     organization = "spk545"

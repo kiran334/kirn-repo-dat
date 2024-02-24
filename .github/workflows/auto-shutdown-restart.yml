@@ -1,0 +1,36 @@
+name: Auto Shutdown/Restart VM
+
+on:
+  schedule:
+    - cron: "15 * * * *"
+
+jobs:
+  shutdown:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set Up Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Shutdown VM
+      run: |
+        az vm deallocate --resource-group ${{ secrets.VM_RESOURCE_GROUP }} --name ${{ secrets.VM_NAME }}
+
+  restart:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set Up Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Restart VM
+      run: |
+        az vm start --resource-group ${{ secrets.VM_RESOURCE_GROUP }} --name ${{ secrets.VM_NAME }}
